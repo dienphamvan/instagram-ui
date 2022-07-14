@@ -33,6 +33,20 @@ function Signup() {
         }
     };
 
+    const handleTestSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            setError(false);
+            setLoading(true);
+            await login('test7@gmail.com', '123456');
+            setLoading(false);
+            navigate(routes.home);
+        } catch (error) {
+            setError(true);
+            setLoading(false);
+        }
+    };
+
     return (
         <article className={cx('wrapper')}>
             <div className={cx('container')}>
@@ -75,6 +89,20 @@ function Signup() {
                                 className={cx('login-button')}
                             >
                                 {!loading ? 'Đăng nhập' : <Loading className={cx('loading-icon')} />}
+                            </Button>
+                            <Button
+                                type="submit"
+                                onClick={handleTestSubmit}
+                                square
+                                white
+                                disabled={loading}
+                                className={cx('login-test-button')}
+                            >
+                                {!loading ? (
+                                    'Đăng nhập bằng tài khoản admin'
+                                ) : (
+                                    <Loading className={cx('loading-icon')} />
+                                )}
                             </Button>
                         </form>
                     </div>
