@@ -1,0 +1,11 @@
+.signup-image {
+    position: absolute;
+    top: 26px;
+    right: 17px;
+    opacity: 0;
+    transition: opacity 1.5s ease-out;
+    &.show {
+        opacity: 1;
+        transition: opacity 1.5s ease-in;
+    }
+}

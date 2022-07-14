@@ -1,0 +1,14 @@
+.loading-icon {
+    color: var(--light-text-color);
+    font-size: 3rem;
+    animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

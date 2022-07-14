@@ -1,0 +1,8 @@
+.noti-wrapper {
+    padding: 12px;
+    max-height: 362px;
+    & > span {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+}

@@ -1,0 +1,77 @@
+.wrapper {
+    height: 100vh;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--separator-color);
+    padding: 12px 0 8px 0;
+}
+
+.content {
+    width: 300px;
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+.header-content {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+    .displayName {
+        font-weight: 600;
+    }
+}
+.wrapper-avatar {
+    position: relative;
+    .avatar {
+        border: 1px solid var(--separator-color);
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        &.loading {
+            opacity: 0.5;
+        }
+    }
+    .spinner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: var(--light-text-color);
+        font-size: 3rem;
+        animation: spinner 1s ease-in-out infinite;
+    }
+}
+.choose-button {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.next-button {
+    margin-top: 32px;
+    align-self: flex-end;
+    font-weight: 500;
+    .next-icon {
+        margin-left: 6px;
+    }
+}
+
+@keyframes spinner {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

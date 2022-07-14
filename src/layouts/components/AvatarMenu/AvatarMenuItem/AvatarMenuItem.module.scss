@@ -1,0 +1,38 @@
+.wrapper {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+
+    &:first-child {
+        padding-top: 12px;
+    }
+
+    &:nth-last-child(2) {
+        padding-bottom: 12px;
+    }
+
+    &:last-child {
+        padding-bottom: 12px;
+    }
+
+    &:hover {
+        background-color: var(--propper-hover-color);
+    }
+}
+
+.separator {
+    border-top: 1px solid var(--separator-color);
+}
+
+.icon {
+    margin-right: 12px;
+    display: flex;
+}
+
+.title {
+    font-size: 1.4rem;
+    font-family: var(--font-default);
+    flex: 1;
+    text-align: left;
+}

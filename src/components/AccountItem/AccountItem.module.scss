@@ -1,0 +1,50 @@
+.wrapper {
+    position: relative;
+}
+
+.user-wrapper {
+    display: flex;
+    padding: 8px 0;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-right: 8px;
+    object-fit: cover;
+}
+
+.account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .user-name {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .fullname {
+        color: var(--light-text-color);
+        font-size: 1.4rem;
+        margin-top: 1px;
+    }
+}
+
+.clear-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: var(--light-text-color);
+    cursor: pointer;
+}

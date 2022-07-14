@@ -1,0 +1,97 @@
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: #fafafa;
+}
+
+.container {
+    width: 840px;
+    margin: 0 auto;
+    padding: 32px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.image-section {
+    height: 581.15px;
+    flex-basis: 380.32px;
+    margin-right: 32px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    max-width: 350px;
+    .section {
+        display: flex;
+        align-items: center;
+        border: 1px solid rgb(219, 219, 219);
+        border-radius: 1px;
+        background-color: var(--white);
+    }
+
+    .login-section {
+        flex-direction: column;
+        padding: 40px;
+        .logo {
+            width: 175px;
+            height: 51px;
+            margin-bottom: 12px;
+        }
+        h4 {
+            color: var(--light-text-color);
+            font-weight: 500;
+            font-size: 1.7rem;
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .login-input {
+                font-size: 1.4rem;
+                width: 100%;
+                padding: 9px 8px;
+                background-color: transparent;
+                border: 1px solid rgb(219, 219, 219);
+                border-radius: 1px;
+                & + .login-input {
+                    margin-top: 8px;
+                }
+            }
+
+            .error {
+                color: red;
+                font-size: 1.4rem;
+                text-align: center;
+                margin-top: 8px;
+            }
+
+            .loading-icon {
+                font-size: 1.4rem;
+                color: var(--white);
+            }
+
+            .login-button {
+                margin-top: 44px;
+            }
+        }
+    }
+
+    .login-redirect {
+        padding: 25px;
+        margin-top: 10px;
+        font-size: 1.4rem;
+        justify-content: center;
+        span {
+            margin-right: 6px;
+        }
+    }
+}

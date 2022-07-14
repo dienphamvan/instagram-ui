@@ -1,0 +1,29 @@
+.wrapper {
+    width: 400px;
+    height: 400px;
+}
+.close-icon {
+    position: absolute;
+    top: 4px;
+    right: 3px;
+    font-size: 2.2rem;
+    padding: 5px 9px;
+    cursor: pointer;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    img {
+        height: 44px;
+        width: 44px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 8px;
+    }
+}
+
+.loading-icon {
+    margin-top: 20px;
+}

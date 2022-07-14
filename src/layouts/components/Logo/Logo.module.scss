@@ -1,0 +1,11 @@
+.logo {
+    width: 103px;
+    height: 29px;
+    margin-top: 7px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: opacity 0.1s ease-out;
+    &:active {
+        opacity: 0.5;
+    }
+}

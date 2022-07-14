@@ -1,0 +1,29 @@
+.wrapper {
+    display: flex;
+}
+
+.heart-wrapper {
+    margin-left: 22px;
+}
+
+.wrapper-avatar {
+    width: 26px;
+    height: 26px;
+    border: 1px solid transparent;
+    flex: 1;
+    border-radius: 50%;
+    margin-left: 22px;
+    cursor: pointer;
+
+    &.wrapper-border {
+        border-color: var(--text-color);
+    }
+
+    & .avatar {
+        height: 24px;
+        width: 24px;
+        border: 1px solid var(--separator-color);
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}

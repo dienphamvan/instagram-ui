@@ -1,0 +1,15 @@
+.wrapper {
+    min-height: 1000px;
+    background-color: #fafafa;
+    padding-top: 20px;
+}
+
+.main {
+    display: flex;
+    width: 821px;
+    max-width: 100%;
+    margin: 0 auto;
+    &.responsive {
+        justify-content: center;
+    }
+}
