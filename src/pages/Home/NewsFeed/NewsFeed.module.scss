@@ -1,5 +1,11 @@
+@use '../../../scss/' as *;
+
 .wrapper {
     flex: 1;
     padding: 0 16px;
     max-width: 470px;
+
+    @include mobile {
+        padding: 0;
+    }
 }

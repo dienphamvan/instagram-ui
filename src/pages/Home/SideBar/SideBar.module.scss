@@ -1,6 +1,11 @@
+@use '../../../scss/' as *;
+
 .wrapper {
     width: 319px;
     margin-top: 12px;
+    @include tablet {
+        display: none;
+    }
 }
 
 .current-user {

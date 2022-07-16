@@ -1,3 +1,5 @@
+@use '../../../../scss/' as *;
+
 .noti-item {
     display: flex;
     width: 500px;
@@ -9,11 +11,17 @@
         align-items: center;
         flex: 1;
     }
+
+    @include mobile {
+        width: 320px;
+    }
 }
 
 .avatar {
-    height: 100%;
+    height: 44px;
+    width: 44px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .user {
@@ -21,9 +29,16 @@
     font-size: 1.4rem;
     .name {
         font-weight: 600;
+        margin-right: 4px;
     }
     .time {
         margin-left: 5px;
         color: var(--light-text-color);
+    }
+}
+
+.post-image {
+    @include mobile {
+        display: none;
     }
 }

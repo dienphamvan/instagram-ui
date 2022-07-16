@@ -38,10 +38,14 @@ function SetupAccount() {
         setAvatar(URL.createObjectURL(file));
         setIsLoading(true);
         try {
-            const uploadAvatar = await upload(file, `/avatar/${currentUser.uid}`);
-            const url = await getDownloadURL(uploadAvatar.ref);
-            await updateProfile(currentUser, { photoURL: url });
-            await updateUser(currentUser.uid, null, url);
+            const updateData = async () => {
+                const uploadAvatar = await upload(file, `/avatar/${currentUser.uid}`);
+                const url = await getDownloadURL(uploadAvatar.ref);
+                updateProfile(currentUser, { photoURL: url });
+                updateUser(currentUser.uid, null, url);
+            };
+
+            updateData();
             setIsLoading(false);
         } catch (error) {
             console.log(error);

@@ -1,3 +1,5 @@
+@use '../../../scss/' as *;
+
 .default-header {
     border-bottom: 1px solid rgb(219, 219, 219);
     position: fixed;
@@ -12,4 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mobile {
+    }
 }
