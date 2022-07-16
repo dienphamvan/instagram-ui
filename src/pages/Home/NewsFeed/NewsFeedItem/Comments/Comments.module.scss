@@ -1,8 +1,14 @@
+@use '../../../../../scss/' as *;
+
 .wrapper {
     width: 600px;
     overflow-y: scroll;
     .body {
         height: calc(100vh - 200px);
+
+        @include mobile {
+            height: auto;
+        }
     }
     &::-webkit-scrollbar {
         display: none;

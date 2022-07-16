@@ -1,3 +1,5 @@
+@use '../../../scss/' as *;
+
 .upload-modal {
     width: 778px;
     height: 481px;
@@ -7,6 +9,10 @@
 .body {
     flex-grow: 1;
     display: flex;
+
+    @include mobile {
+        flex-direction: column-reverse;
+    }
 }
 
 .image-section {
@@ -16,6 +22,13 @@
     justify-content: center;
     align-items: center;
     border-right: 1px solid var(--separator-color);
+
+    @include mobile {
+        width: 100%;
+        padding: 12px 0;
+        border-right: 0;
+        min-height: 300px;
+    }
     .post-image {
         position: relative;
         .loading {
@@ -25,6 +38,10 @@
             max-width: 100%;
             max-height: 350px;
             object-fit: contain;
+
+            @include mobile {
+                max-height: 232px;
+            }
         }
         .loading-icon {
             position: absolute;
@@ -49,6 +66,10 @@
     flex: 1;
     padding: 18px 16px;
     position: relative;
+
+    @include mobile {
+        border-bottom: 1px solid var(--separator-color);
+    }
     .input-section {
         display: flex;
         flex-direction: column;

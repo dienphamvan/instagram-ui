@@ -83,7 +83,7 @@ function SetupAccount() {
                     square
                     white
                 >
-                    Chọn ảnh từ máy tính
+                    Chọn ảnh từ thiết bị
                 </Button>
                 <button type="submit" ref={buttonSubmitRef}></button>
                 <Button

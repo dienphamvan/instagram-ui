@@ -86,7 +86,7 @@ function UploadModal({ handleHideModal }) {
                             white
                             className={cx('upload-button')}
                         >
-                            Chọn từ máy tính
+                            Chọn từ thiết bị
                         </Button>
                     </div>
                     <div className={cx('content-section')}>
