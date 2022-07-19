@@ -428,3 +428,71 @@ export const EmojiIcon = ({ className }) => (
         <path d="M15.83 10.997a1.167 1.167 0 101.167 1.167 1.167 1.167 0 00-1.167-1.167zm-6.5 1.167a1.167 1.167 0 10-1.166 1.167 1.167 1.167 0 001.166-1.167zm5.163 3.24a3.406 3.406 0 01-4.982.007 1 1 0 10-1.557 1.256 5.397 5.397 0 008.09 0 1 1 0 00-1.55-1.263zM12 .503a11.5 11.5 0 1011.5 11.5A11.513 11.513 0 0012 .503zm0 21a9.5 9.5 0 119.5-9.5 9.51 9.51 0 01-9.5 9.5z"></path>
     </svg>
 );
+
+//Inbox
+export const NewMessage = ({ className }) => (
+    <svg className={className} color="#262626" fill="#262626" height="24" role="img" width="24">
+        <path
+            d="M12.202 3.203H5.25a3 3 0 00-3 3V18.75a3 3 0 003 3h12.547a3 3 0 003-3v-6.952"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+        ></path>
+        <path
+            d="M10.002 17.226H6.774v-3.228L18.607 2.165a1.417 1.417 0 012.004 0l1.224 1.225a1.417 1.417 0 010 2.004z"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+        ></path>
+        <line
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            x1="16.848"
+            x2="20.076"
+            y1="3.924"
+            y2="7.153"
+        ></line>
+    </svg>
+);
+
+export const MoreIcon = ({ className }) => (
+    <svg className={className} color="#262626" fill="#262626" height="24" viewBox="0 0 24 24" width="24">
+        <circle
+            cx="12.001"
+            cy="12.005"
+            fill="none"
+            r="10.5"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+        ></circle>
+        <circle cx="11.819" cy="7.709" r="1.25"></circle>
+        <line
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            x1="10.569"
+            x2="13.432"
+            y1="16.777"
+            y2="16.777"
+        ></line>
+        <polyline
+            fill="none"
+            points="10.569 11.05 12 11.05 12 16.777"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+        ></polyline>
+    </svg>
+);
