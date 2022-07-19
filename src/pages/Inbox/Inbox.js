@@ -10,21 +10,6 @@ import styles from './Inbox.module.scss';
 
 const cx = classNames.bind(styles);
 
-const DUMMY_DATA = [
-    {
-        avatar: 'https://firebasestorage.googleapis.com/v0/b/instagramserver-185ab.appspot.com/o/avatar%2F4YZ1h9pysrOAu9vnzZxmxeOacoT2?alt=media&token=72ab8ed5-5dc9-4738-a2d8-ce72f5da5a1e',
-        username: 'david',
-    },
-    {
-        avatar: 'https://firebasestorage.googleapis.com/v0/b/instagramserver-185ab.appspot.com/o/avatar%2F4YZ1h9pysrOAu9vnzZxmxeOacoT2?alt=media&token=72ab8ed5-5dc9-4738-a2d8-ce72f5da5a1e',
-        username: 'david',
-    },
-    {
-        avatar: 'https://firebasestorage.googleapis.com/v0/b/instagramserver-185ab.appspot.com/o/avatar%2F4YZ1h9pysrOAu9vnzZxmxeOacoT2?alt=media&token=72ab8ed5-5dc9-4738-a2d8-ce72f5da5a1e',
-        username: 'david',
-    },
-];
-
 function Inbox() {
     const [isShowSwap, setIsShowSwap] = useState(false);
     const { currentUser } = useAuth();
