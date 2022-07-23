@@ -14,8 +14,8 @@ import {
     UploadIcon,
 } from '~/components/Icons';
 import Overlay from '~/components/Overlay';
-import SwapModal from '~/components/SwapModal/SwapModal';
 import { routes } from '~/config';
+import { useApp } from '~/contexts/AppContext';
 import { useAuth } from '~/contexts/AuthContext';
 import AvatarMenu from '../AvatarMenu';
 import Noti from '../Noti';
@@ -28,9 +28,9 @@ const cx = classNames.bind(styles);
 function Action() {
     const [isModal, setIsModal] = useState(false);
     const [isHeart, setIsHeart] = useState(false);
-
     const [isAvatar, setIsAvatar] = useState(false);
-    const [isSwap, setIsSwap] = useState(false);
+
+    const { setIsShowSwapModal } = useApp();
 
     const handleShowModal = () => {
         setIsModal(true);
@@ -41,7 +41,7 @@ function Action() {
     };
 
     const handleShowSwap = () => {
-        setIsSwap(true);
+        setIsShowSwapModal(true);
         setIsAvatar(false);
     };
 
@@ -50,13 +50,6 @@ function Action() {
     return (
         <>
             {(isHeart || isAvatar) && <Overlay />}
-            {isSwap && (
-                <SwapModal
-                    onClick={() => {
-                        setIsSwap(false);
-                    }}
-                />
-            )}
             {isModal && <UploadModal handleHideModal={handleHideModal} />}
             <div className={cx('wrapper')}>
                 <ActionItem

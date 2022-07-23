@@ -1,17 +1,16 @@
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import { useState } from 'react';
 import Button from '~/components/Button';
 import { EmojiIcon, MoreIcon, NewMessage } from '~/components/Icons';
-import SwapModal from '~/components/SwapModal/SwapModal';
+import { useApp } from '~/contexts/AppContext';
 import { useAuth } from '~/contexts/AuthContext';
 import styles from './Inbox.module.scss';
 
 const cx = classNames.bind(styles);
 
 function Inbox() {
-    const [isShowSwap, setIsShowSwap] = useState(false);
+    const { setIsShowSwapModal } = useApp();
     const { currentUser } = useAuth();
 
     const handleSubmit = (e) => {
@@ -23,18 +22,11 @@ function Inbox() {
             <div className={cx('inbox-wrapper')}>
                 <div className={cx('user-section')}>
                     <header className={cx('header')}>
-                        {isShowSwap && (
-                            <SwapModal
-                                onClick={() => {
-                                    setIsShowSwap(false);
-                                }}
-                            />
-                        )}
                         <div></div>
                         <div
                             className={cx('username-wrapper')}
                             onClick={() => {
-                                setIsShowSwap(true);
+                                setIsShowSwapModal(true);
                             }}
                         >
                             <span className={cx('username')}>{currentUser.displayName}</span>

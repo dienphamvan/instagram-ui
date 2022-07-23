@@ -5,10 +5,11 @@ import { useAuth } from './AuthContext';
 
 const { createContext, useContext, useState, useEffect } = require('react');
 
-const PostsContext = createContext();
-export const usePosts = () => useContext(PostsContext);
+const AppContext = createContext();
+export const useApp = () => useContext(AppContext);
 
-export const PostsProvider = ({ children }) => {
+export const AppProvider = ({ children }) => {
+    const [isShowSwapModal, setIsShowSwapModal] = useState(false);
     const [posts, setPosts] = useState([]);
     const { currentUser } = useAuth();
 
@@ -17,7 +18,7 @@ export const PostsProvider = ({ children }) => {
         const postsRef = collectionRef('posts');
         const postsQuery = query(postsRef, orderBy('createdAt', 'desc'));
         const unsub = onSnapshot(postsQuery, async (snapshot) => {
-            // Not loading animation to prevent re-render current user news when another user post a new post
+            // Not using loading animation to prevent re-render current user news when another user post a new post
             const data = [];
             for (let i = 0; i < snapshot.docs.length; i++) {
                 const doc = snapshot.docs[i];
@@ -47,7 +48,9 @@ export const PostsProvider = ({ children }) => {
 
     const value = {
         posts,
+        isShowSwapModal,
+        setIsShowSwapModal,
     };
 
-    return <PostsContext.Provider value={value}>{children}</PostsContext.Provider>;
+    return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };

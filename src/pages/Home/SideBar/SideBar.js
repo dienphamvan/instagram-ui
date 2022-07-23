@@ -1,9 +1,8 @@
 import classNames from 'classnames/bind';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '~/components/Button';
 import Image from '~/components/Image';
-import SwapModal from '~/components/SwapModal/SwapModal';
+import { useApp } from '~/contexts/AppContext';
 import { useAuth } from '~/contexts/AuthContext';
 import styles from './SideBar.module.scss';
 
@@ -23,19 +22,12 @@ const dummyDataUsers = [
 ];
 
 function SideBar() {
-    const [isShowSwap, setIsShowSwap] = useState(false);
     const { currentUser } = useAuth();
     const { displayName: username, photoURL: avatar } = currentUser;
+    const { setIsShowSwapModal } = useApp();
 
     return (
         <>
-            {isShowSwap && (
-                <SwapModal
-                    onClick={() => {
-                        setIsShowSwap(false);
-                    }}
-                />
-            )}
             <section className={cx('wrapper')}>
                 <div className={cx('current-user')}>
                     <div className={cx('infor')}>
@@ -46,7 +38,7 @@ function SideBar() {
                         blue
                         medium
                         onClick={() => {
-                            setIsShowSwap(true);
+                            setIsShowSwapModal(true);
                         }}
                     >
                         Chuyển

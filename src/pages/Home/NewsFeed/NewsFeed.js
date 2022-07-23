@@ -1,11 +1,11 @@
 import classNames from 'classnames/bind';
-import { usePosts } from '~/contexts/PostsContext';
+import { useApp } from '~/contexts/AppContext';
 import styles from './NewsFeed.module.scss';
 import NewsFeedItem from './NewsFeedItem';
 
 const cx = classNames.bind(styles);
 function NewsFeed() {
-    const { posts } = usePosts();
+    const { posts } = useApp();
 
     return (
         <div className={cx('wrapper')}>
