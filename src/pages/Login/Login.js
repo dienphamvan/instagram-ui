@@ -99,7 +99,7 @@ function Signup() {
                                 className={cx('login-test-button')}
                             >
                                 {!loading ? (
-                                    'Đăng nhập bằng tài khoản admin'
+                                    'Đăng nhập ngay với tài khoản có sẵn'
                                 ) : (
                                     <Loading className={cx('loading-icon')} />
                                 )}
