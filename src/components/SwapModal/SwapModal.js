@@ -31,7 +31,7 @@ function SwapModal({ onClick }) {
                 </div>
 
                 <div className={cx('footer')}>
-                    <Button to={routes.login} blue medium>
+                    <Button onClick={onClick} to={routes.login} blue medium>
                         Đăng nhập vào tài khoản hiện có
                     </Button>
                 </div>
