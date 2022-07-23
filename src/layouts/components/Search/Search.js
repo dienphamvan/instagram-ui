@@ -11,7 +11,7 @@ import Loading from '~/components/Loading';
 import Overlay from '~/components/Overlay';
 import { PropperWrapper } from '~/components/Propper';
 import useDebounce from '~/hooks/useDebounce';
-import { getUsers } from '~/service/getUsers';
+import { searchUsers } from '~/service/searchUsers';
 import styles from './Search.module.scss';
 
 const cx = classNames.bind(styles);
@@ -83,7 +83,7 @@ function Search() {
             const fetchApi = async () => {
                 try {
                     setIsLoading(true);
-                    const res = await getUsers(debounceValue);
+                    const res = await searchUsers(debounceValue.replace(' ', ''));
                     setSearchItems(res);
                     setIsLoading(false);
                 } catch (error) {
