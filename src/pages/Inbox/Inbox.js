@@ -1,48 +1,25 @@
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Button from '~/components/Button';
 import { EmojiIcon, MoreIcon, NewMessage, SendMessageIcon } from '~/components/Icons';
 import { useApp } from '~/contexts/AppContext';
 import { useAuth } from '~/contexts/AuthContext';
-import { getRooms } from '~/service/getRooms';
-import { getUser } from '~/service/getUser';
+import { useMessages } from '~/contexts/MessagesContext';
 import styles from './Inbox.module.scss';
 
 const cx = classNames.bind(styles);
 
 function Inbox() {
-    const [rooms, setRooms] = useState([]);
     const [userChatBox, setUserChatBox] = useState();
     const { setIsShowSwapModal } = useApp();
+    const { rooms } = useMessages();
     const { currentUser } = useAuth();
 
     const handleSubmit = (e) => {
         e.preventDefault();
     };
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const roomsUid = await getRooms(currentUser.uid);
-
-            for (let i = 0; i < roomsUid.length; i++) {
-                const data = {};
-                const roomUid = roomsUid[i];
-                data.rid = roomUid.id;
-                const uid = roomUid.uids.find((uid) => uid !== currentUser.uid);
-                const user = await getUser(uid);
-                data.user = { ...user };
-                setRooms((prev) => {
-                    for (const val of prev) {
-                        if (val.rid === data.rid) return prev;
-                    }
-                    return prev.concat([data]);
-                });
-            }
-        };
-        fetchData();
-    }, [currentUser]);
 
     return (
         <section className={cx('wrapper')}>
@@ -74,9 +51,7 @@ function Inbox() {
                                 <img className={cx('avatar')} src={room.user.avatar} alt="avatar" />
                                 <div className={cx('last-message-wrapper')}>
                                     <span className={cx('username')}>{room.user.username}</span>
-                                    <span className={cx('last-message')}>
-                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                                    </span>
+                                    <span className={cx('last-message')}>{room.lastMessage}</span>
                                 </div>
                             </div>
                         ))}
